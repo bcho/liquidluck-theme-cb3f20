@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ site.name }}{% endblock %}
+
+{% block main %}
+<section class="main_archive">
+  <section class="year">
+    <ul>
+    {% for item in pagination.items %}
+      <li>> {{ item.title }}<a href="{{ item|permalink }}">{{ item.date }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+</section>
+{% endblock %}
+
+{% block main_nav %}{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "post.html" %}
+{% block main %}
+<section class="main_content">
+  <header class="heading">
+    <h1>{{ post.title }}</h1>
+  </header>
+  <article>
+    {{ post.content }}
+  </article>
+</section>
+{% endblock %}

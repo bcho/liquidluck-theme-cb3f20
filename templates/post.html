@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block afterstyle %}
+{% if post.summary %}
+  <link rel="canonical" href="{{ post|permalink }}" />
+  <meta name="description" content="{{ post.summary }}" />
+{% endif %}
+{% endblock %}
+
+{% block main %}
+<section class="main_content">
+  <header class="heading">
+    <h1>{{ post.title }}</h1>
+  </header>
+  <article>
+    {{ post.content }}
+  </article>
+  <footer>
+    <ul class="tags">
+      {% for tag in post.tags %}
+      <a href="{{ tag|tag_url }}">#{{ tag }}</a>
+      {% endfor %}
+    </ul>
+    <section class="data">
+      <p>{{ post.date }}</p>
+    </section>
+  </footer>
+</section>
+{% endblock %}
+{% block main_nav %}{% endblock %}

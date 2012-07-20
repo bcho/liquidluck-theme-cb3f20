@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Andika|Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ static_url('css/style.css') }}" />
+    {% if site.feed -%}
+    <link rel="alternate" type="application/rss+xml" href="{{ site.feed }}" title="{{ site.name }}" />
+    {% else %}
+    <link rel="alternate" type="application/rss+xml" href="{{ content_url('feed.xml') }}" title="{{ site.name }}" />
+    {%- endif %}
+    {% if theme.analytics -%}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{theme.analytics}}']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+      (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {% -endif %}
+    {% block afterstyle %}{% endblock %}
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="main_wrapper offset3">
+        <header class="main_header">
+          {% block header -%}
+          {%- endblock %}
+        </header>
+        {% block main -%}
+        <section class="main_content">
+          <header class="heading"></header>
+          <article>
+          </article>
+          <footer></footer>
+        </section>
+        {%- endblock %}
+        {% block main_nav -%}
+        <nav class="main_nav">
+          {% for name, link in theme.navigation %}
+          <a href="{{ link }}">{{ name }}</a>
+          {%- endfor %}
+        </nav>
+        {%- endblock %}
+        <footer class="main_footer">
+          {% block footer -%}
+          {% if theme.copyright -%}
+          <p>{{ theme.copyright }}</p>
+          {%- endif %}
+          {% if theme.slogan -%}
+          <p>{{ theme.slogan }}</p>
+          {%- endif %}
+          {%- endblock %}
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
