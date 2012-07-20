@@ -1,0 +1,111 @@
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-fixed {
+    margin-right: auto;
+    margin-left: auto;
+    .clearfix();
+}
+
+#grid {
+    .fixed(@grid_column_width, @grid_gutter_width) {
+        
+        .spanX(@index) when (@index > 0) {
+            (~".span@{index}") {.span(@index);}
+            .spanX(@index - 1); // for is better
+        }
+        .spanX(0) {} // Stop me
+
+        .offsetX(@index) when (@index > 0) {
+            (~".offset@{index}") {.offset(@index);}
+            .offsetX(@index - 1);
+        }
+        .offsetX(0) {} // Stop me
+        
+        .row {
+            margin-left: -@grid_gutter_width;
+            .clearfix();
+        }
+
+        [class*="span"] {
+            float: left;
+            margin-left: @grid_gutter_width;
+        }
+
+        .span(@columns) {
+            width: @grid_column_width * @columns + @grid_gutter_width * (@columns - 1);
+        }
+
+        .offset(@columns) {
+            margin-left: @grid_column_width * @columns + @grid_gutter_width * (@columns + 1);
+        }
+
+        .container {
+            .span(@grid_columns);
+        }
+
+        // Generate columns
+        .spanX(@grid_columns);
+        .offsetX(@grid_columns);
+    }
+
+    .fluid(@fluid_column_width, @fluid_gutter_width) {
+
+        .spanX(@index) when (@index > 0) {
+            (~".fluid-row .span@{index}") {.span(@index);}
+            .spanX(@index - 1); // for is better
+        }
+        .spanX(0) {} // Stop me
+        
+        .span(@columns) {
+            width: @fluid_column_width * @columns + @fluid_gutter_width * (@columns - 1);
+        }
+
+        .fluid-row {
+            width: 100%;
+            .clearfix();
+            [class*="span"] {
+                float: left;
+                margin-left: @fluid_gutter_width;
+            }
+        }
+        [class*="fluid_span"]:first-child {
+            margin-left: 0;
+        }
+
+        .spanX(@grid_columns);
+    }
+}
+
+// CSS3 generator-webkit-transition: all .2s ;
+.transition(@sec, @item: all) {
+  -webkit-transition: @item @sec ;
+  -moz-transition: @item @sec ;
+  -ms-transition: @item @sec ;
+  -o-transition: @item @sec ;
+  transition: @item @sec ;
+}
+
+.text_shadow(@x, @y, @z, @s) {
+  text-shadow: @x @y @z @s;
+}

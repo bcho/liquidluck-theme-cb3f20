@@ -1,0 +1,37 @@
+// Color
+@base_color: #444;
+@light_color: #cb3f20;
+@dark_color: #666;
+
+// Grid
+@page_width: 960px;
+@grid_columns: 12;
+
+// fixed
+@grid_gutter_width: 20px;
+@grid_column_width: @page_width / @grid_columns - @grid_gutter_width;
+@grid_row_width: @grid_column_width * @grid_columns + @grid_gutter_width * (@grid_columns - 1);
+
+// fluid
+@fluid_column_width: percentage(@grid_column_width / @page_width);
+@fluid_gutter_width: percentage(@grid_gutter_width / @page_width);
+
+// Typography
+// font family
+@sans_font_family: Andika, "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti sans !important;
+@serif_font_family: Andika, "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti sans !important;
+@mono_font_family: Inconsolata, monospace;
+
+// basic
+@base_font_size: 15px;
+@base_font_family: @sans_font_family;
+@base_line_height: 25px;
+
+// links
+@link_color: #cb3f20;
+@link_hover_color: #222; 
+
+// headings
+@headings_font_family: @sans_font_family;
+@headings_font_weight: bold;
+@headings_color: @base_color;
