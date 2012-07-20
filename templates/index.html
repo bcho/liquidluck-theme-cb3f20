@@ -1,18 +1,13 @@
-{% extends "layout.html" %}
-
-{% block title %}{{ site.name }}{% endblock %}
+{% extends "archive.html" %}
 
 {% block main %}
 <section class="main_archive">
-  {% for year in resource.year %}
   <section class="item">
-    <h3>{{ year }}</h3>    
     <ul>
-    {% for item in resource.year[year] %}
+    {% for item in resource.posts %}
       <li>> {{ item.title }}<a href="{{ item|permalink }}">{{ item.date.strftime('%b %d, %Y') }}</a></li>
     {% endfor %}
     </ul>
   </section>
-  {% endfor%}
 </section>
 {% endblock %}

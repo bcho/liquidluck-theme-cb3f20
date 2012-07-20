@@ -19,13 +19,13 @@
   <footer>
     <ul class="tags">
       {% for tag in post.tags %}
-      <a href="{{ tag|tag_url }}">#{{ tag }}</a>
+      <li><a href="{{ tag|tag_url }}">#{{ tag }}</a></li>
       {% endfor %}
     </ul>
-    <section class="data">
-      <p>{{ post.date }}</p>
+    <div class="clearfix"></div>
+    <section class="date">
+      <p>{{ post.date.strftime('%b %d, %Y') }}</p>
     </section>
   </footer>
 </section>
 {% endblock %}
-{% block main_nav %}{% endblock %}

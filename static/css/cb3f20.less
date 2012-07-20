@@ -37,18 +37,38 @@ footer.main_footer {
   & a:hover { color: @light_color;}
 }
 
+.main_nav {
+  margin-top: 20px;
+  & ul {
+    display: inline;
+    list-style: none;
+
+    & li {
+      & a {
+      }
+      margin-left: 5px;
+      float: left;
+      display: block;
+      color: @dark_color;
+    }
+  }
+}
+
 .main_archive,
 .main_content {
-  min-height: 300px;
 }
 
 .main_archive {
-  & .year {
+  & .item {
     & ul {
       margin-left: 10px;
       list-style: none;
 
       & li {
+        & a {
+          margin-left: 15px;
+          font-size: .8em;
+        }
       }
     }
   }

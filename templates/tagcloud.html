@@ -1,14 +1,14 @@
-{% extends "layout.html" %}
+{% extends "archive.html" %}
 
-{% block title %}{{ site.name }}{% endblock %}
+{% block title %}Tags ~ {{ site.name }}{% endblock %}
 
 {% block main %}
 <section class="main_archive">
-  {% for year in resource.year %}
+  {% for tag in resource.tag %}
   <section class="item">
-    <h3>{{ year }}</h3>    
+    <h3>{{ tag }}</h3>    
     <ul>
-    {% for item in resource.year[year] %}
+    {% for item in resource.tag[tag] %}
       <li>> {{ item.title }}<a href="{{ item|permalink }}">{{ item.date.strftime('%b %d, %Y') }}</a></li>
     {% endfor %}
     </ul>

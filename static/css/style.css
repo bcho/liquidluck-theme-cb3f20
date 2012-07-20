@@ -576,7 +576,7 @@ abbr {
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 25px;
-  border-left: 3px solid #666666;
+  border-left: 3px solid rgba(0, 0, 0, 0.4);
 }
 blockquote p {
   margin-bottom: 0;
@@ -785,13 +785,26 @@ footer.main_footer p {
 footer.main_footer a:hover {
   color: #cb3f20;
 }
-.main_archive,
-.main_content {
-  min-height: 300px;
+.main_nav {
+  margin-top: 20px;
 }
-.main_archive .year ul {
+.main_nav ul {
+  display: inline;
+  list-style: none;
+}
+.main_nav ul li {
+  margin-left: 5px;
+  float: left;
+  display: block;
+  color: #666666;
+}
+.main_archive .item ul {
   margin-left: 10px;
   list-style: none;
+}
+.main_archive .item ul li a {
+  margin-left: 15px;
+  font-size: .8em;
 }
 .main_content header {
   margin: 10px auto 20px;
