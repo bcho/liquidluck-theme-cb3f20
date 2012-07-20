@@ -22,7 +22,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    {% -endif %}
+    {%- endif %}
     {% block afterstyle %}{% endblock %}
   </head>
   <body class="container">
@@ -33,12 +33,6 @@
           {%- endblock %}
         </header>
         {% block main -%}
-        <section class="main_content">
-          <header class="heading"></header>
-          <article>
-          </article>
-          <footer></footer>
-        </section>
         {%- endblock %}
         {% block main_nav -%}
         <nav class="main_nav">
