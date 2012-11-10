@@ -447,6 +447,7 @@ td {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  *zoom: 1;
 }
 .container-fixed:before,
 .container-fixed:after {
@@ -626,6 +627,7 @@ pre {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  *zoom: 1;
 }
 .container:before,
 .container:after {
@@ -639,6 +641,7 @@ pre {
   margin-left: 2.083333333333333%;
   margin-right: 2.083333333333333%;
   *zoom: 1;
+  *zoom: 1;
 }
 .container-fluid:before,
 .container-fluid:after {
@@ -650,6 +653,7 @@ pre {
 }
 .row {
   margin-left: -20px;
+  *zoom: 1;
   *zoom: 1;
 }
 .row:before,
@@ -819,6 +823,9 @@ footer.main_footer a:hover {
 .main_content article h5,
 .main_content article h6 {
   margin-left: -2px;
+}
+.main_content article img {
+  max-width: 600px;
 }
 .main_content footer {
   margin-top: 15px;
