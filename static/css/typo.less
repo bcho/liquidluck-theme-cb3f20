@@ -47,7 +47,7 @@ h1 {
 
 h2 {
     font-size: 24px;
-    line-height: @base_line_height * 1.5;
+    line-height: 24px * 2;
 
     small {
         font-size: 18px;
@@ -60,7 +60,7 @@ h2 {
 
 h3 {
     font-size: 18px;
-    line-height: @base_line_height * 1.5;
+    line-height: 18px * 2;
 
     small {
         fonti-size: 14px;
@@ -68,7 +68,7 @@ h3 {
 }
 
 h4, h5, h6 {
-    line-height: @base_line_height;
+    line-height: @base_line_height * 1.5;
 }
 
 h4 {
@@ -111,6 +111,10 @@ ol {
 
 li {
     line-height: @base_line_height;
+
+    p {
+      margin-bottom: 0;
+    }
 }
 
 // Emphasis
@@ -179,4 +183,12 @@ pre { // block
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
+}
+
+hr {
+  background: url('../images/hr.png') repeat-x 0 0;
+  height: 4px;
+  border: 0 none;
+  color: #ccc;
+  padding: 0;
 }

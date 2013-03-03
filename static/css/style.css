@@ -447,7 +447,6 @@ td {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
-  *zoom: 1;
 }
 .container-fixed:before,
 .container-fixed:after {
@@ -505,7 +504,7 @@ h1 small {
 }
 h2 {
   font-size: 24px;
-  line-height: 37.5px;
+  line-height: 48px;
 }
 h2 small {
   font-size: 18px;
@@ -515,7 +514,7 @@ h2.title {
 }
 h3 {
   font-size: 18px;
-  line-height: 37.5px;
+  line-height: 36px;
 }
 h3 small {
   fonti-size: 14px;
@@ -523,7 +522,7 @@ h3 small {
 h4,
 h5,
 h6 {
-  line-height: 25px;
+  line-height: 37.5px;
 }
 h4 {
   font-size: 14px;
@@ -560,6 +559,9 @@ ol {
 }
 li {
   line-height: 25px;
+}
+li p {
+  margin-bottom: 0;
 }
 strong {
   color: #cb3f20;
@@ -623,10 +625,16 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
 }
+hr {
+  background: url('../images/hr.png') repeat-x 0 0;
+  height: 4px;
+  border: 0 none;
+  color: #ccc;
+  padding: 0;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
-  *zoom: 1;
   *zoom: 1;
 }
 .container:before,
@@ -641,7 +649,6 @@ pre {
   margin-left: 2.083333333333333%;
   margin-right: 2.083333333333333%;
   *zoom: 1;
-  *zoom: 1;
 }
 .container-fluid:before,
 .container-fluid:after {
@@ -653,7 +660,6 @@ pre {
 }
 .row {
   margin-left: -20px;
-  *zoom: 1;
   *zoom: 1;
 }
 .row:before,
@@ -822,7 +828,7 @@ footer.main_footer a:hover {
 .main_content article h4,
 .main_content article h5,
 .main_content article h6 {
-  margin-left: -2px;
+  margin-left: 0px;
 }
 .main_content article img {
   max-width: 600px;
